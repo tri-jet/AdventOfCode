@@ -7,7 +7,7 @@ public class Part1{
     boolean hasInput = scanner.hasNextLine();
     String binaryNum, gammaRate, epsRate, bit, currentNum;
     gammaRate = epsRate = "";
-    int numSize, bits0, bits1;
+    int numSize, bits0, bits1, gRate, eRate, power;
     ArrayList<String> binaryNums = new ArrayList<>();
     
     //Add all binary numbers to an array list
@@ -41,10 +41,14 @@ public class Part1{
 	gammaRate = gammaRate + "0";
 	epsRate = epsRate + "1";
       }
-      System.out.println("Current bits1: " + bits1 + "   Current bits0: " + bits0);
-      System.out.println("Gamma rate: " + gammaRate);
     }
     System.out.println("The gamma rate for this data is " + gammaRate);
     System.out.println("The epsilon rate for this data is " + epsRate);
+    gRate = Integer.parseInt(gammaRate, 2);
+    eRate = Integer.parseInt(epsRate, 2);
+    power = gRate*eRate;
+    System.out.println("Gamma rate: " + gRate + "\nEpsilon rate: " + eRate + " \nPower: " + power);
+    
+    
   }
 }
